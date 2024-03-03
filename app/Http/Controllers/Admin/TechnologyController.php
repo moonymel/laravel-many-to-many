@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Admin\Controllers;
 
 use App\Models\Technology;
 use App\Http\Requests\StoreTechnologyRequest;
