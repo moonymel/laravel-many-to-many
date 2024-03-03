@@ -12,7 +12,14 @@
                     <b>Titolo</b>: {{ $project->title }}<br>
                     <b>Description</b>: {{ $project->description }}<br>
                     <b>Authors</b>: {{ $project->authors }}<br>
-                    <b>Completed</b>: {{ $project->description ? 'Yes' : 'No' }}
+                    <b>Completed</b>: {{ $project->description ? 'Yes' : 'No' }}<br>
+                    <b>Technologies</b>: 
+                    @forelse ($project->technologies as $technology) 
+                        #{{ $technology->name }}
+                    @empty 
+                        No technologies selected
+                    @endforelse
+                    
                 </div>
             </div>
         </div>

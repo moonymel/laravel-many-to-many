@@ -42,6 +42,16 @@
                     </select>
                 </div>
                 <div class="form-group my-2">
+                    <label for="technology_id">Technologies</label>
+                    @foreach ($technologies as $technology)
+                        <div class="form-check-inline">
+                        <input type="checkbox" name="technologies[]" id="technology-{{$technology->id}}" class="form-check-input" value="{{ $technology->id }}" @checked(is_array(old('technologies')) && in_array(old('technologies')))>
+                        <laberl for="" class="form-check-label">{{ $technology->name }}</label>
+                        </div>
+                    @endforeach
+
+                </div>
+                <div class="form-group my-2">
                     <label for="preview_image">Preview image</label>
                     <input class="form-control @error('preview_image') is-invalid @enderror" type="text" name="preview_image" id="preview_image" value="{{ old('preview_image') ?? $project->preview_image }}">
                     @error('preview_image')
